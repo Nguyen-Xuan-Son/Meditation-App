@@ -1,93 +1,97 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button:focus {
+    outline: none;
 }
 
 .app {
-  height: 100vh;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
 }
 
-.time-select,
-.sound-picker {
-  height: 80%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  flex: 1;
-}
-.time-select button,
-.sound-picker button {
-  color: white;
-  width: 30%;
-  height: 10%;
-  background: none;
-  font-size: 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 2px solid white;
-  transition: all 0.5s ease;
+.choose-time,
+.time-countdown,
+.sound-choose {
+    height: 80%;
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 }
 
-.sound-picker button {
-  border: none;
-  height: 120px;
-  width: 120px;
-  padding: 30px;
-  border-radius: 50%;
-}
-.sound-picker button:nth-child(1) {
-  background: #4972a1;
-}
-.sound-picker button:nth-child(2) {
-  background: #a14f49;
-}
-.sound-picker button img {
-  height: 100%;
+.time-countdown {
+    position: relative;
 }
 
-.time-select button:hover {
-  background: white;
-  color: black;
+.time-countdown svg {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    z-index: -10;
 }
 
-.player-container {
-  position: relative;
-  height: 80%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  flex: 1;
+.play {
+    cursor: pointer;
 }
 
-.player-container svg {
-  position: absolute;
-  height: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  pointer-events: none;
-}
-.player-container svg circle {
-  transition: all 0.2s ease-in-out;
-}
 .time-display {
-  color: white;
-  position: absolute;
-  font-size: 50px;
-  bottom: 10%;
+    font-size: 50px;
+    position: absolute;
+    bottom: 10%;
+    color: #fff;
 }
 
 video {
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  z-index: -10;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    z-index: -100;
+}
+
+.choose-time button,
+.sound-choose button {
+    color: #fff;
+    width: 30%;
+    height: 10%;
+    background: none;
+    border: 2px solid #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+
+.choose-time button:hover {
+    background: #fff;
+    color: black;
+}
+
+.sound-choose button {
+    border: none;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+.sound-choose button:nth-child(1) {
+    background-color: rgb(99, 215, 250);
+}
+
+.sound-choose button:nth-child(2) {
+    background-color: rgb(255, 160, 51);
+}
+
+.sound-choose button img {
+    height: 70%;
 }
